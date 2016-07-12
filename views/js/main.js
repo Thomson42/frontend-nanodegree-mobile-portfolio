@@ -447,14 +447,24 @@ var resizePizzas = function(size) {
     return dx;
   }
 
+  // I optimized this function by moving all the variables out of the loop
+  // Because looping through them is too expensive 
   // Iterates through pizza elements on the page and changes their widths
-  function changePizzaSizes(size) {
-    for (var i = 0; i < document.querySelectorAll(".randomPizzaContainer").length; i++) {
-      var dx = determineDx(document.querySelectorAll(".randomPizzaContainer")[i], size);
-      var newwidth = (document.querySelectorAll(".randomPizzaContainer")[i].offsetWidth + dx) + 'px';
-      document.querySelectorAll(".randomPizzaContainer")[i].style.width = newwidth;
-    }
-  }
+ function changePizzaSizes(size) {
+ 	var randomPizzaArray = document.getElementsByClassName(".randomPizzaContainer");
+
+ 	var randomPizzaOffsetWidth = document.querySelector("#randomPizzas").offsetWidth;
+
+ 	var offsetWidth = randomPizzaArray[0].offsetWidth;
+
+ 	var dx = determineDx(randomPizzaArray[0], size);
+
+ 	var newwidth = (offsetWidth + dx) + 'px';
+
+ 	for (var i = 0; i < allRandomPizzaContainers.length; i++) {
+ 	randomPizzaArray[i].style.witdth = newwidth;
+ 	}
+ }
 
   changePizzaSizes(size);
 
@@ -468,8 +478,10 @@ var resizePizzas = function(size) {
 window.performance.mark("mark_start_generating"); // collect timing data
 
 // This for-loop actually creates and appends all of the pizzas when the page loads
+
+//variable reomoved from for loop
+var pizzasDiv = document.getElementById("randomPizzas");
 for (var i = 2; i < 100; i++) {
-  var pizzasDiv = document.getElementById("randomPizzas");
   pizzasDiv.appendChild(pizzaElementGenerator(i));
 }
 
@@ -517,22 +529,20 @@ function updatePositions() {
   }
 }
 
+//CODE SNIPPET TAKEN FROM MOZILLA DEVELOPER NETWORK
+var last_known_scroll_position = 0;
+var ticking = false;
+
 // runs updatePositions on scroll
-window.addEventListener('scroll', updatePositions);
+window.addEventListener('scroll', function(e) {
+	last_known_scroll_position = window.scrollY;
+	if (!ticking) {
+		window.requestAnimationFrame(function() {
+			updatePositions();
+			ticking = false;
+		});
+	}
+	ticking = true;
+}
 
 // Generates the sliding pizzas when the page loads.
-document.addEventListener('DOMContentLoaded', function() {
-  var cols = 8;
-  var s = 256;
-  for (var i = 0; i < 200; i++) {
-    var elem = document.createElement('img');
-    elem.className = 'mover';
-    elem.src = "images/pizza.png";
-    elem.style.height = "100px";
-    elem.style.width = "73.333px";
-    elem.basicLeft = (i % cols) * s;
-    elem.style.top = (Math.floor(i / cols) * s) + 'px';
-    document.querySelector("#movingPizzas1").appendChild(elem);
-  }
-  updatePositions();
-});
