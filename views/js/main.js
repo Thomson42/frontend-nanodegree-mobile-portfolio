@@ -373,18 +373,20 @@ var pizzaElementGenerator = function(i) {
   pizzaDescriptionContainer = document.createElement("div");
 
   pizzaContainer.classList.add("randomPizzaContainer");
-  pizzaContainer.style.width = "33.33%";
-  pizzaContainer.style.height = "325px";
+  //pizzaContainer.style.width = "33.33%";  // Stops HTML elements from recalcuateing
+  //pizzaContainer.style.height = "325px";
   pizzaContainer.id = "pizza" + i;                // gives each pizza element a unique id
   pizzaImageContainer.classList.add("col-md-6");
 
-  pizzaImage.src = "images/pizza.png";
+  pizzaImage.src = "images/pizzeria-thumbnail.png";
   pizzaImage.classList.add("img-responsive");
+  pizzaImageContainer.classList.add("centered-div");
   pizzaImageContainer.appendChild(pizzaImage);
   pizzaContainer.appendChild(pizzaImageContainer);
 
 
   pizzaDescriptionContainer.classList.add("col-md-6");
+  //pizzaDescriptionContainer.classList.add("pizza-description"); //ADDING CUSTOM CLASS
 
   pizzaName = document.createElement("h4");
   pizzaName.innerHTML = randomName();
@@ -426,16 +428,30 @@ var resizePizzas = function(size) {
     var oldWidth = elem.offsetWidth;
     var windowWidth = document.querySelector("#randomPizzas").offsetWidth;
     var oldSize = oldWidth / windowWidth;
-
+    var mobilWidth = 425;
+    var windowDimensions = getWindowWidthAndHeight();
+    var width = windowDimenstions.width;
     // Changes the slider value to a percent width
     function sizeSwitcher (size) {
       switch(size) {
         case "1":
+        if (width > mobileWidth) {
           return 0.25;
+        } else {
+        	return 0.37;
+        }
         case "2":
+        	if (width > mobileWidth) {
           return 0.3333;
+      } else {
+      	return 0.5;
+      }
         case "3":
+        if(width > mobileWidth) {
           return 0.5;
+        } else {
+        	return 1;
+        }
         default:
           console.log("bug in sizeSwitcher");
       }
@@ -462,7 +478,7 @@ var resizePizzas = function(size) {
  	var newwidth = (offsetWidth + dx) + 'px';
 
  	for (var i = 0; i < allRandomPizzaContainers.length; i++) {
- 	randomPizzaArray[i].style.witdth = newwidth;
+ 	randomPizzaArray[i].style.width = newwidth;
  	}
  }
 
@@ -543,6 +559,6 @@ window.addEventListener('scroll', function(e) {
 		});
 	}
 	ticking = true;
-}
+});
 
 // Generates the sliding pizzas when the page loads.
