@@ -380,13 +380,11 @@ var pizzaElementGenerator = function(i) {
 
   pizzaImage.src = "images/pizza.png";
   pizzaImage.classList.add("img-responsive");
-  pizzaImageContainer.classList.add("centered-div");
   pizzaImageContainer.appendChild(pizzaImage);
   pizzaContainer.appendChild(pizzaImageContainer);
 
 
   pizzaDescriptionContainer.classList.add("col-md-6");
-  //pizzaDescriptionContainer.classList.add("pizza-description"); //ADDING CUSTOM CLASS
 
   pizzaName = document.createElement("h4");
   pizzaName.innerHTML = randomName();
@@ -408,13 +406,13 @@ var resizePizzas = function(size) {
   function changeSliderLabel(size) {
     switch(size) {
       case "1":
-        document.querySelector("#pizzaSize").innerHTML = "Small";
+        document.getElementById("#pizzaSize").innerHTML = "Small";
         return;
       case "2":
-        document.querySelector("#pizzaSize").innerHTML = "Medium";
+        document.getElementById("#pizzaSize").innerHTML = "Medium";
         return;
       case "3":
-        document.querySelector("#pizzaSize").innerHTML = "Large";
+        document.getElementById("#pizzaSize").innerHTML = "Large";
         return;
       default:
         console.log("bug in changeSliderLabel");
@@ -545,20 +543,33 @@ function updatePositions() {
   }
 }
 
-//CODE SNIPPET TAKEN FROM MOZILLA DEVELOPER NETWORK
-var last_known_scroll_position = 0;
-var ticking = false;
-
-// runs updatePositions on scroll
-window.addEventListener('scroll', function(e) {
-	last_known_scroll_position = window.scrollY;
-	if (!ticking) {
-		window.requestAnimationFrame(function() {
-			updatePositions();
-			ticking = false;
-		});
-	}
-	ticking = true;
-});
+// runs updatePositions on scroll.
+window.addEventListener('scroll', updatePositions); 
 
 // Generates the sliding pizzas when the page loads.
+document.addEventListener('DOMContentLoaded', function() {
+  var cols = 8;
+  var s = 256;
+  //using innerHeight to calculate number of background pizzas painted for the screen size.
+  var pCols = Math.ceil(window.innerWidth / s);
+        console.log(pCols);
+  var pRows = Math.ceil(window.innerHeight / s);
+        console.log(pRows);
+  var pizzaDelivery = pCols * pRows;
+        console.log(pizzaDelivery);
+        cols = pCols;
+  //declared elem outside of the loop.
+  var elem;
+  //lowered number of pizzas being painted.
+  for (var i = 0; i < pizzaDelivery; i++) {
+    elem = document.createElement('img');
+    elem.className = 'mover';
+    elem.src = "images/pizza.png";
+    elem.style.height = "100px";
+    elem.style.width = "73.333px";
+    elem.style.left = (i % cols) * s + 'px';
+    elem.style.top = (Math.floor(i / cols) * s) + 'px';
+    document.getElementById("movingPizzas1").appendChild(elem);
+  }
+    updatePositions();
+});
