@@ -46,6 +46,7 @@ form {
 .randomPizzaContainer {
   float: left;
   display: flex;
+  flex-wrap: wrap;
   width: 33.33%;
   height: 470px;
 }
