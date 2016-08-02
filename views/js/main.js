@@ -494,10 +494,9 @@ var count;
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
-  var scrollTop = document.body.scrollTop; 
   var phase = [];
   for (var i = 0; i < 5; i++) { 
-    phase[i] = Math.sin((scrollTop / 1250) + (i % 5)) * 100;
+    phase[i] = Math.sin((document.body.scrollTop / 1250) + (i % 5)) * 100;
   }
   for (var i = 0; i < count; i++) { 
     arrayPizzas[i].style.left = 256*(i%8) + phase[i%5] + 'px';
