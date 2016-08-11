@@ -22,6 +22,10 @@ To mesure my optimisation on views/pizza.html, you will need to click the [Cam's
 
 You might find the FPS Counter/HUD Display useful in Chrome developer tools described here: [Chrome Dev Tools tips-and-tricks](https://developer.chrome.com/devtools/docs/tips-and-tricks).
 
+####Part 3: Critique
+
+Be sure to leave detailed instruction on what parts of my code you looked at, what parts of the code you think need improving and how they should be improved.
+
 ### Optimization Tips and Tricks
 * [Optimizing Performance](https://developers.google.com/web/fundamentals/performance/ "web performance")
 * [Analyzing the Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/analyzing-crp.html "analyzing crp")
