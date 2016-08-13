@@ -26,6 +26,10 @@ You might find the FPS Counter/HUD Display useful in Chrome developer tools desc
 
 Be sure to leave detailed instruction on what parts of my code you looked at, what parts of the code you think need improving and how they should be improved.
 
+### Optimization Changelog 
+*[First changes](https://github.com/Thomson42/frontend-nanodegree-mobile-portfolio/commit/19c07407e01071a77bcf514977ebdd30c6671d41) made for the inital improvment of the pizza seciont of the website. unwraped bad forloops and attemped to add code from outside source to build working pizzas.
+
+
 ### Optimization Tips and Tricks
 * [Optimizing Performance](https://developers.google.com/web/fundamentals/performance/ "web performance")
 * [Analyzing the Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/analyzing-crp.html "analyzing crp")
