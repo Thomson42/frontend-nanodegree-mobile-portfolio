@@ -27,8 +27,10 @@ You might find the FPS Counter/HUD Display useful in Chrome developer tools desc
 Be sure to leave detailed instruction on what parts of my code you looked at, what parts of the code you think need improving and how they should be improved.
 
 ### Optimization Changelog 
-*[First changes](https://github.com/Thomson42/frontend-nanodegree-mobile-portfolio/commit/19c07407e01071a77bcf514977ebdd30c6671d41) made for the inital improvment of the pizza seciont of the website. unwraped bad forloops and attemped to add code from outside source to build working pizzas.
-
+* [First changes](https://github.com/Thomson42/frontend-nanodegree-mobile-portfolio/commit/535b870dc5283b25812fe37bf81b57dc05ffc26f) made for the inital improvment of the pizza seciont of the website. unwraped bad forloops and attemped to add code from outside source to build working pizzas. Along with useing more effecent methods.
+* [Second changes](https://github.com/Thomson42/frontend-nanodegree-mobile-portfolio/commit/72bdb7e856173ad54977ad65af08427918e0ad5d) woked to improve several functions changeSliderLabel, changePizzaSizes, and movingPizzas primarily.
+* [Third changes](https://github.com/Thomson42/frontend-nanodegree-mobile-portfolio/commit/33559b5530a415f65ce3fe7a90048182a1659c96) Added finishing touches to the update positions bug.
+* [Final changes](https://github.com/Thomson42/frontend-nanodegree-mobile-portfolio/commit/0d30d78751839418d54a9d782c8f93faed842b5a) made changes sugested from Udacity code review.
 
 ### Optimization Tips and Tricks
 * [Optimizing Performance](https://developers.google.com/web/fundamentals/performance/ "web performance")
