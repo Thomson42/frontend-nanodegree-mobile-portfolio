@@ -34,3 +34,6 @@ The portfolio was built on Twitter's <a href="http://getbootstrap.com/">Bootstra
 
 ### Used assets 
 [Origonal Udacity code](https://github.com/udacity/frontend-nanodegree-mobile-portfolio) 
+
+### Contact info
+If you have any questions feel free to email me at [Christopher.thomson42@gmail.com](Christopher.thomson42@gmail.com)
