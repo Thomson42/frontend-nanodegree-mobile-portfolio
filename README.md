@@ -1,5 +1,7 @@
 ## Website Performance Optimization portfolio project
 
+rewrite, and document other links
+
 link to live website [Thomson42's live website](http://thomson42.github.io/frontend-nanodegree-mobile-portfolio/)
 
 Your challenge, if you wish to accept it (and we sure hope you will), is to review an optimized  online portfolio for speed! In particular, checking the critical rendering path and make sure this page renders as quickly as possible by applying the techniques you've picked up in the [Critical Rendering Path course](https://www.udacity.com/course/ud884).
