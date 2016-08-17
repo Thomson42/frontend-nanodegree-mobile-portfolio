@@ -1,8 +1,7 @@
 ## Website Performance Optimization portfolio project
 
-rewrite, and document other links
 
-#### The Website for review: [Thomson42's live website](http://thomson42.github.io/frontend-nanodegree-mobile-portfolio/)
+## The Website for review: [Thomson42's live website](http://thomson42.github.io/frontend-nanodegree-mobile-portfolio/)
 
 Hello project reviewers, this is the gethub portfolio for website optimization. Here you will find all the information nessary to get started in reviewing the website optimizations I made. To get started, check out the repository and inspect the code, after reading below.
 
